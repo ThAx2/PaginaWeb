@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facultad de Ingenieria Mochis - UAS</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* encabezado */
+        .encabezado {
+            background-color: rgb(26, 76, 212);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .encabezado h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .encabezado p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* menu de navegacion */
+        .menu {
+            background-color: #f5c500;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: rgb(26, 76, 212);
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* contenido principal */
+        .contenido {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* bienvenida */
+        .bienvenida {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .bienvenida h2 {
+            color: rgb(26, 76, 212);
+            font-size: 22px;
+        }
+
+        .bienvenida p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* avisos */
+        .aviso {
+            background-color: #fff3cd;
+            border: 1px solid #f5c500;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .aviso strong {
+            color: rgb(26, 76, 212);
+        }
+
+        /* tabla de programas */
+        .programas {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .programas h2 {
+            color: rgb(26, 76, 212);
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f5c500;
+            padding-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        table th {
+            background-color: rgb(26, 76, 212);
+            color: white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background-color: #eef2ff;
+        }
+
+        /* servicios */
+        .servicios {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .servicios h2 {
+            color: rgb(26, 76, 212);
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f5c500;
+            padding-bottom: 6px;
+        }
+
+        .servicios ul {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .servicios ul li a {
+            color: rgb(26, 76, 212);
+            text-decoration: none;
+        }
+
+        .servicios ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* contacto */
+        .contacto {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .contacto h2 {
+            color: rgb(26, 76, 212);
+            font-size: 18px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #f5c500;
+            padding-bottom: 6px;
+        }
+
+        /* pie de pagina */
+        .footer {
+            background-color: rgb(26, 76, 212);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- encabezado -->
+    <div class="encabezado">
+        <h1>Facultad de Ingenieria Mochis</h1>
+        <p>Universidad Autonoma de Sinaloa &nbsp;|&nbsp; Los Mochis, Sinaloa</p>
+    </div>
+
+    <!-- menu -->
+    <div class="menu">
+        <a href="#">Inicio</a>
+        <a href="#">Mision y Vision</a>
+        <a href="#">Licenciatura</a>
+        <a href="#">Posgrado</a>
+        <a href="#">SECIHTI</a>
+        <a href="#">Titulacion</a>
+        <a href="#">Cursos</a>
+    </div>
+
+    <!-- contenido -->
+    <div class="contenido">
+
+        <!-- bienvenida -->
+        <div class="bienvenida">
+            <h2>Bienvenido a la Facultad de Ingenieria Mochis</h2>
+            <p>Formamos ingenieros comprometidos con el desarrollo de la region. Contamos con programas acreditados de licenciatura y posgrado.</p>
+        </div>
+
+        <!-- aviso -->
+        <div class="aviso">
+            <strong>Aviso:</strong> Ya esta disponible la programacion de Examenes Extraordinarios. Consulta la seccion de tu plan de estudios.
+        </div>
+
+        <!-- programas -->
+        <div class="programas">
+            <h2>Oferta Educativa</h2>
+            <table>
+                <tr>
+                    <th>Programa</th>
+                    <th>Nivel</th>
+                    <th>Modalidad</th>
+                </tr>
+                <tr>
+                    <td><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=714&Itemid=111">Ingenieria Civil</a></td>
+                    <td>Licenciatura</td>
+                    <td>Presencial</td>
+                </tr>
+                <tr>
+                    <td><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=721&Itemid=110">Ingenieria Geodesica</a></td>
+                    <td>Licenciatura</td>
+                    <td>Presencial</td>
+                </tr>
+                <tr>
+                    <td><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=703&Itemid=109">Ingenieria de Software</a></td>
+                    <td>Licenciatura</td>
+                    <td>Presencial</td>
+                </tr>
+                <tr>
+                    <td><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=734&Itemid=157">Ing. en Procesos Industriales</a></td>
+                    <td>Licenciatura</td>
+                    <td>Presencial</td>
+                </tr>
+                <tr>
+                    <td><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=764&Itemid=184">Ing. de Software Virtual</a></td>
+                    <td>Licenciatura</td>
+                    <td>Virtual</td>
+                </tr>
+                <tr>
+                    <td><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=786&Itemid=193">Ing. en Nanotecnologia y Energias Renovables</a></td>
+                    <td>Licenciatura</td>
+                    <td>Presencial</td>
+                </tr>
+                <tr>
+                    <td><a href="http://uasposing.org/mci">Maestria en Ciencias de la Ingenieria</a></td>
+                    <td>Posgrado</td>
+                    <td>Presencial</td>
+                </tr>
+                <tr>
+                    <td><a href="http://uasposing.org/dci">Doctorado en Ciencias de la Ingenieria</a></td>
+                    <td>Posgrado</td>
+                    <td>Presencial</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- servicios -->
+        <div class="servicios">
+            <h2>Servicios</h2>
+            <ul>
+                <li><a href="http://dse.uasnet.mx/alumnos">Servicios a Alumnos</a></li>
+                <li><a href="http://siia.uasnet.mx/empleado">Servicios a Profesores</a></li>
+                <li><a href="https://sit.uas.edu.mx/alumnos/">Tutorias - Alumnos</a></li>
+                <li><a href="https://sit.uas.edu.mx/profesores/">Tutorias - Profesores</a></li>
+                <li><a href="http://diplouasvirtual.net/ing_mochis">Plataforma Virtual (Moodle)</a></li>
+                <li><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=57&Itemid=70">Servicio Social</a></li>
+                <li><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=188&Itemid=107">Practicas Profesionales</a></li>
+                <li><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=307&Itemid=138">Titulacion</a></li>
+                <li><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=670&Itemid=155">Convocatorias</a></li>
+                <li><a href="https://fim.uas.edu.mx/index.php?option=com_content&view=article&id=671&Itemid=156">Bolsa de Trabajo</a></li>
+            </ul>
+        </div>
+
+        <!-- contacto -->
+        <div class="contacto">
+            <h2>Contacto</h2>
+            <p>Direccion: Los Mochis, Sinaloa, Mexico</p>
+            <p>Telefono: 66 88 12 76 41</p>
+            <p>Correo: fim@uas.edu.mx</p>
+            <p>Sitio oficial: <a href="https://fim.uas.edu.mx">fim.uas.edu.mx</a></p>
+        </div>
+
+    </div>
+
+    <!-- pie de pagina -->
+    <div class="footer">
+        <p>Facultad de Ingenieria Mochis - Universidad Autonoma de Sinaloa</p>
+        <p>Los Mochis, Sinaloa &nbsp;|&nbsp; 2025</p>
+    </div>
+
+</body>
+</html>
