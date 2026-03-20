@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAS - Préstamo de Equipo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #f0f4ff;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 30px 0 10px;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: rgb(26, 76, 212);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto 60px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 30px 35px;
+        }
+
+        .section {
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 14px;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .field label {
+            font-size: 0.9rem;
+            color: #222;
+            min-width: 80px;
+        }
+
+        .field input[type="text"],
+        .field select {
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 4px 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            color: #111;
+        }
+
+        .field input[type="text"] { width: 200px; }
+        .field select { width: 150px; }
+
+        .field textarea {
+            width: 100%;
+            height: 70px;
+            resize: vertical;
+            margin-top: 4px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 6px 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .field input[type="date"],
+        .field input[type="time"] {
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 4px 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .carrera-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .carrera-row label {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            min-width: auto;
+            font-weight: 600;
+        }
+
+        .radio-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.9rem;
+        }
+
+        .radio-row label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            min-width: auto;
+        }
+
+        .fecha-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-registrar {
+            background-color: rgb(26, 76, 212);
+            color: white;
+            border: none;
+            padding: 7px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 6px;
+        }
+
+        .btn-registrar:hover {
+            background-color: rgb(18, 55, 160);
+        }
+
+        #toast {
+            display: none;
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: rgb(26, 76, 212);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Universidad Autónoma de Sinaloa</h1>
+        <div class="botones">
+            <button onclick="window.location.href='index.html'">Ir al Inicio</button>
+            <button onclick="window.location.href='Alumnos.html'">Alumnos</button>
+            <button onclick="window.location.href='equipos.html'">Equipos</button>
+        </div>
+    </nav>
+
+    <p class="page-title">Solicitud de Préstamo de Equipo</p>
+
+    <div class="form-container">
+
+        <!-- Datos del solicitante -->
+        <div class="section">
+            <h2>Datos del solicitante</h2>
+
+            <div class="field">
+                <label>Nombre:</label>
+                <input type="text" id="nombre">
+            </div>
+
+            <div class="field">
+                <label>Tipo:</label>
+                <div class="radio-row">
+                    <label><input type="radio" name="tipo" value="Alumno" checked> Alumno</label>
+                    <label><input type="radio" name="tipo" value="Profesor"> Profesor</label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Carrera:</label>
+                <div class="carrera-row">
+                    <label><input type="checkbox" name="carrera" value="C"> C</label>
+                    <label><input type="checkbox" name="carrera" value="G"> G</label>
+                    <label><input type="checkbox" name="carrera" value="S"> S</label>
+                    <label><input type="checkbox" name="carrera" value="IP"> IP</label>
+                    <label><input type="checkbox" name="carrera" value="IN"> IN</label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Grupo:</label>
+                <input type="text" id="grupo" style="width:90px;" maxlength="5">
+            </div>
+        </div>
+
+        <!-- Equipo solicitado -->
+        <div class="section">
+            <h2>Equipo solicitado</h2>
+
+            <div class="field">
+                <label>Equipo:</label>
+                <select id="equipo">
+                    <option>Laptop</option>
+                    <option>Cañón / Proyector</option>
+                    <option>Cable HDMI</option>
+                    <option>Extension</option>
+                    <option>Tablet</option>
+                    <option>Otro</option>
+                </select>
+            </div>
+
+            <div class="field" style="flex-direction:column; align-items:flex-start;">
+                <label>Descripcion:</label>
+                <textarea id="descripcion"></textarea>
+            </div>
+        </div>
+
+        <!-- Prestamo -->
+        <div class="section">
+            <h2>Prestamo</h2>
+
+            <div class="fecha-row">
+                <label>Fecha:</label>
+                <input type="date" id="fecha-prestamo">
+                <label>Hora:</label>
+                <input type="time" id="hora-prestamo">
+            </div>
+
+            <div class="fecha-row">
+                <label>Entrega: Fecha:</label>
+                <input type="date" id="fecha-entrega">
+                <label>Hora:</label>
+                <input type="time" id="hora-entrega">
+            </div>
+        </div>
+
+        <!-- Firmas -->
+        <div class="section">
+            <h2>Firmas</h2>
+
+            <div class="field">
+                <label>Solicitante:</label>
+                <input type="text" id="firma-solicitante">
+            </div>
+
+            <div class="field">
+                <label>Encargado:</label>
+                <input type="text" id="firma-encargado">
+            </div>
+
+            <button class="btn-registrar" onclick="registrar()">Registrar</button>
+        </div>
+
+    </div>
+
+    <div id="toast">✅ Préstamo registrado correctamente.</div>
+
+    <script>
+        const now = new Date();
+        document.getElementById('fecha-prestamo').value = now.toISOString().split('T')[0];
+        document.getElementById('hora-prestamo').value = now.toTimeString().slice(0, 5);
+
+        function registrar() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const grupo  = document.getElementById('grupo').value.trim();
+            const fechaP = document.getElementById('fecha-prestamo').value;
+
+            if (!nombre || !grupo || !fechaP) {
+                alert('Por favor completa: Nombre, Grupo y Fecha de préstamo.');
+                return;
+            }
+
+            const registro = {
+                id: Date.now(),
+                nombre,
+                tipo: document.querySelector('input[name="tipo"]:checked').value,
+                carreras: [...document.querySelectorAll('input[name="carrera"]:checked')].map(c => c.value).join(', ') || '—',
+                grupo,
+                equipo: document.getElementById('equipo').value,
+                descripcion: document.getElementById('descripcion').value.trim(),
+                fechaPrestamo: fechaP,
+                horaPrestamo: document.getElementById('hora-prestamo').value,
+                fechaEntrega: document.getElementById('fecha-entrega').value,
+                horaEntrega: document.getElementById('hora-entrega').value,
+                firmaSolicitante: document.getElementById('firma-solicitante').value.trim(),
+                firmaEncargado: document.getElementById('firma-encargado').value.trim()
+            };
+
+            const lista = JSON.parse(localStorage.getItem('uas_prestamos') || '[]');
+            lista.unshift(registro);
+            localStorage.setItem('uas_prestamos', JSON.stringify(lista));
+
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => toast.style.display = 'none', 2800);
+
+            // Reset form
+            document.getElementById('nombre').value = '';
+            document.getElementById('grupo').value = '';
+            document.getElementById('descripcion').value = '';
+            document.getElementById('fecha-entrega').value = '';
+            document.getElementById('hora-entrega').value = '';
+            document.getElementById('firma-solicitante').value = '';
+            document.getElementById('firma-encargado').value = '';
+            document.querySelectorAll('input[name="carrera"]').forEach(c => c.checked = false);
+            document.querySelector('input[name="tipo"][value="Alumno"]').checked = true;
+        }
+    </script>
+
+</body>
+</html>

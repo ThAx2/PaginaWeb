@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica: Salidas JS - UAS</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 40px; background: #f0f2f5; color: #333; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
+        h1 { color: #1a4cd4; border-bottom: 2px solid #1a4cd4; padding-bottom: 10px; }
+        h2 { font-size: 1.1rem; color: #555; margin-top: 20px; }
+        .result { background: #eef; padding: 10px; border-radius: 4px; font-weight: bold; color: #1a4cd4; }
+        button { background: #1a4cd4; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #153ba3; }
+    </style>
+</head>
+<body>
+
+    
+        <h1>Datos Personales (JS)</h1>
+        
+        <h2>1. Salida en el documento (innerHTML):</h2>
+        <div id="mi-nombre" class="result"></div>
+
+        <h2>2. Salida directa (document.write):</h2>
+        <div class="result">
+            <script>document.write("Carrera: Ingeniería en Software");</script>
+        </div>
+
+        <h2>3. Salida emergente (alert):</h2>
+        <button onclick="saludar()">Ver Alerta</button>
+
+        <h2>4. Salida en consola:</h2>
+        <p><i>Presiona F12 y abre "Consola" para ver el resultado.</i></p>
+    
+
+    <script>
+        const nombre = "Vega Ayala Alexander";
+        const grupo = "301";
+
+        document.getElementById("mi-nombre").innerHTML = "Nombre: " + nombre;
+        function saludar() {
+            window.alert("Bienvenido al sistema del grupo " + grupo);
+        }
+        console.log("Log de depuración:");
+        console.log("Nombre del alumno:", nombre);
+        console.log("Grupo:", grupo);
+    </script>
+
+</body>
+</html>
