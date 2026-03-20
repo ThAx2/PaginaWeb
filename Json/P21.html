@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Básica - Mi Práctica</title>
+    <style>
+       
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        .box { border: 1px solid #ccc; padding: 20px; width: 300px; margin: auto; border-radius: 5px; }
+        input { width: 80%; margin: 10px 0; padding: 8px; }
+        button { margin: 5px; padding: 8px 12px; cursor: pointer; }
+        #res { margin-top: 20px; font-weight: bold; color: blue; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h3>Calculadora de Operaciones</h3>
+        
+        <input type="number" id="valor1" placeholder="Primer número">
+        <br>
+        <input type="number" id="valor2" placeholder="Segundo número">
+        <br>
+
+        <button onclick="sumar()">+</button>
+        <button onclick="restar()">-</button>
+        <button onclick="dividir()">/</button>
+        <button onclick="potencia()">^</button>
+
+        <div id="res">Resultado: 0</div>
+    </div>
+
+    <script>
+      
+        function obtenerValores() {
+            var n1 = parseFloat(document.getElementById("valor1").value);
+            var n2 = parseFloat(document.getElementById("valor2").value);
+            return { n1, n2 };
+        }
+
+        function sumar() {
+            var datos = obtenerValores();
+            var r = datos.n1 + datos.n2;
+            document.getElementById("res").innerHTML = "Suma: " + r;
+        }
+
+        function restar() {
+            var datos = obtenerValores();
+            var r = datos.n1 - datos.n2;
+            document.getElementById("res").innerHTML = "Resta: " + r;
+        }
+
+        function dividir() {
+            var datos = obtenerValores();
+            if (datos.n2 == 0) {
+                document.getElementById("res").innerHTML = "Error: / 0";
+            } else {
+                var r = datos.n1 / datos.n2;
+                document.getElementById("res").innerHTML = "División: " + r;
+            }
+        }
+
+        function potencia() {
+            var datos = obtenerValores();
+            var r = Math.pow(datos.n1, datos.n2);
+            document.getElementById("res").innerHTML = "Potencia: " + r;
+        }
+    </script>
+
+</body>
+</html>
