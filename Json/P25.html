@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas de Multiplicar - UAS</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f7f6; padding: 20px; text-align: center; }
+        h1 { color: #1a4cd4; }
+        #contenedor-tablas { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 15px; 
+            margin-top: 20px; 
+        }
+        .tabla-card { 
+            background: white; 
+            padding: 10px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            border-top: 4px solid #1a4cd4;
+        }
+        .tabla-card h3 { margin: 5px 0; color: #333; border-bottom: 1px solid #eee; }
+        .linea { font-size: 0.9rem; padding: 2px 0; }
+        button { 
+            background-color: #1a4cd4; 
+            color: white; 
+            border: none; 
+            padding: 12px 25px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            font-size: 1rem;
+        }
+        button:hover { background-color: #153ba3; }
+    </style>
+</head>
+<body>
+
+    <h1>Generador de Tablas de Multiplicar</h1>
+    <button onclick="generarTablas()">Generar Tablas del 1 al 10</button>
+
+    <div id="contenedor-tablas"></div>
+
+    <script>
+        function generarTablas() {
+            var contenedor = document.getElementById("contenedor-tablas");
+            contenedor.innerHTML = ""; 
+
+            for (var i = 1; i <= 10; i++) {
+                var tarjeta = document.createElement("div");
+                tarjeta.className = "tabla-card";
+                
+                var contenido = "<h3>Tabla del " + i + "</h3>";
+                
+                for (var j = 1; j <= 10; j++) {
+                    contenido += "<div class='linea'>" + i + " x " + j + " = " + (i * j) + "</div>";
+                }
+                
+                tarjeta.innerHTML = contenido;
+                contenedor.appendChild(tarjeta);
+            }
+        }
+    </script>
+
+</body>
+</html>

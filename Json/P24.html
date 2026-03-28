@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica: Fecha Actual con Switch</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .tarjeta { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 8px solid #1a4cd4; text-align: center; }
+        h1 { color: #333; font-size: 1.2rem; margin-bottom: 20px; }
+        #fecha-texto { font-size: 1.5rem; color: #1a4cd4; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="tarjeta">
+        <h1>Fecha del Sistema</h1>
+        <div id="fecha-texto">Cargando fecha...</div>
+    </div>
+
+    <script>
+        
+        var fecha = new Date();
+        
+        var diaSemanaN = fecha.getDay(); 
+        var diaMes = fecha.getDate();    
+        var mesN = fecha.getMonth();     
+        var anio = fecha.getFullYear();  
+
+        var nombreDia, nombreMes;
+
+       
+        switch(diaSemanaN) {
+            case 0: nombreDia = "domingo"; break;
+            case 1: nombreDia = "lunes"; break;
+            case 2: nombreDia = "martes"; break;
+            case 3: nombreDia = "miércoles"; break;
+            case 4: nombreDia = "jueves"; break;
+            case 5: nombreDia = "viernes"; break;
+            case 6: nombreDia = "sábado"; break;
+        }
+
+      
+        switch(mesN) {
+            case 0: nombreMes = "Enero"; break;
+            case 1: nombreMes = "Febrero"; break;
+            case 2: nombreMes = "Marzo"; break;
+            case 3: nombreMes = "Abril"; break;
+            case 4: nombreMes = "Mayo"; break;
+            case 5: nombreMes = "Junio"; break;
+            case 6: nombreMes = "Julio"; break;
+            case 7: nombreMes = "Agosto"; break;
+            case 8: nombreMes = "Septiembre"; break;
+            case 9: nombreMes = "Octubre"; break;
+            case 10: nombreMes = "Noviembre"; break;
+            case 11: nombreMes = "Diciembre"; break;
+        }
+
+        
+        var fraseCompleta = "Hoy es " + nombreDia + " " + diaMes + " de " + nombreMes + " del año " + anio;
+
+      
+        document.getElementById("fecha-texto").innerHTML = fraseCompleta;
+
+        console.log("Fecha procesada correctamente para la práctica.");
+    </script>
+
+</body>
+</html>
